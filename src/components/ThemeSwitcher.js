@@ -12,16 +12,16 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2 sm:gap-3">
       {Object.entries(themes).map(([key, value]) => (
         <button
           key={key}
           onClick={() => switchTheme(key)}
-          className={`w-8 h-8 rounded-full bg-gradient-to-br ${colorMap[key]} transition-all duration-300 ${
+          className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br ${colorMap[key]} transition-all duration-300 ${
             currentTheme === key
               ? "ring-2 ring-offset-2 ring-gray-400 scale-110"
               : "hover:scale-105"
-          } shadow-md`}
+          } shadow-md flex-shrink-0`}
           title={value.name}
         />
       ))}

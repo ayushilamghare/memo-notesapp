@@ -63,31 +63,31 @@ function MainContent() {
     const others = filteredNotes.filter((n) => !n.isPinned);
 
     return (
-        <div className="px-2 md:px-6 py-8">
+        <div className="px-2 sm:px-4 md:px-6 py-4 sm:py-8">
 
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-8">
 
                 {/* Search */}
-                <div className="flex-1 relative">
-                    <Search className={`absolute left-4 top-3.5 ${theme.accent}`} size={20} />
+                <div className="flex-1 min-w-0 relative">
+                    <Search className={`absolute left-3 top-3 sm:top-3.5 ${theme.accent}`} size={18} />
                     <input
                         type="text"
-                        placeholder="Search notes by title or content..."
+                        placeholder="Search notes..."
                         value={searchQuery}
                         onChange={(e) => dispatch(setSearch(e.target.value))}
-                        className={`w-full pl-12 pr-4 py-3 rounded-lg border ${theme.border} bg-white/70 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all duration-200 shadow-sm hover:shadow-md`}
+                        className={`w-full pl-10 pr-3 py-2 sm:pl-12 sm:pr-4 sm:py-3 rounded-lg border ${theme.border} bg-white/70 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all duration-200 shadow-sm hover:shadow-md text-sm`}
                     />
                 </div>
 
                 {/* Sort */}
-                <div className="flex items-center gap-2">
-                    <ArrowUpDown size={20} className={theme.accent} />
+                <div className="flex items-center gap-2 flex-shrink-0">
+                    <ArrowUpDown size={18} className={theme.accent} />
                     <select
                         value={sortBy}
                         onChange={(e) => dispatch(setSort(e.target.value))}
-                        className={`px-4 py-3 rounded-lg border ${theme.border} bg-white/70 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all duration-200 shadow-sm hover:shadow-md font-medium ${theme.accent}`}
+                        className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg border ${theme.border} bg-white/70 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all duration-200 shadow-sm hover:shadow-md font-medium ${theme.accent} text-sm`}
                     >
-                        <option value="none">Sort by</option>
+                        <option value="none">Sort</option>
                         <option value="title">Title (A-Z)</option>
                         <option value="description">Description</option>
                     </select>
@@ -106,7 +106,7 @@ function MainContent() {
                         </span>
                     </div>
 
-                    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
                         {pinned.map((note) => (
                             <AllNotes
                                 key={note.id}
@@ -135,7 +135,7 @@ function MainContent() {
                         </span>
                     </div>
 
-                    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                         {others.map((note) => (
                             <AllNotes
                                 key={note.id}

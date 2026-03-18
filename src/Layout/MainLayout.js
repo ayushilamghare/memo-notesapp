@@ -10,7 +10,7 @@ function MainLayout() {
   const { theme } = useContext(ThemeContext);
   
   return (
-    <div className={`h-screen flex flex-col bg-gradient-to-br ${theme.bgGradient}`}>
+    <div className={`h-screen w-screen flex flex-col bg-gradient-to-br ${theme.bgGradient} overflow-x-hidden`}>
 
       {/* Navbar (top) */}
       <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
@@ -21,8 +21,8 @@ function MainLayout() {
        <SideBar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto">
-          <div className="max-w-7xl mx-auto">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden w-full">
+          <div className="w-full">
             <MainContent/>
           </div>
         </main>
