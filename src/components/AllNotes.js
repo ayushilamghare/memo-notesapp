@@ -9,7 +9,7 @@ import { useState, useContext } from "react";
 import { useDispatch } from "react-redux";
 import { ThemeContext } from "../context/ThemeContext";
 
-import { addNote, togglePin, deleteNote, archiveNote, permanentDelete, restoreNote }
+import { togglePin, deleteNote, archiveNote, permanentDelete, restoreNote }
     from "../features/note/noteSlice";
 
 function AllNotes({ note, onEdit }) {

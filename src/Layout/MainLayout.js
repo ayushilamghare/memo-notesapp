@@ -1,4 +1,3 @@
-import AllNotes from "../components/AllNotes";
 import MainContent from "../components/MainContent";
 import Navbar from "../components/Navbar";
 import SideBar from "../components/SideBar";
